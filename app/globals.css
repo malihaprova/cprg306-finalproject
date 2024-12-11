@@ -13,9 +13,35 @@
     --foreground: #ededed;
   }
 }
+h1 {
+    font-size: xx-large;
+}
+h2 {
+    font-size: x-large;
+}
+h3 {
+    font-size: larger;
+}
+h4 {
+    font-size: large;
+}
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0; 
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: black;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
+
+main {
+    height: 100%;
+    width: 50%;            /* Ensure it spans the full width */
+  }

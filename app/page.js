@@ -1,101 +1,103 @@
+'use client'
 import Image from "next/image";
-
+import Link from 'next/link';
+import Navbar from '../components/navbar.js';
+import '../globals.css'; 
+ {/*
+    - Brief Description of site contents
+    - Highlights section for each page
+    */}
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
-}
+    const illustrationsPreview = [
+        '/images/sunnflower.jpg',
+        '/images/riverdale.jpg',
+        '/images/spidercat.jpg',
+      ];
+    
+      const designsPreview = [
+        '/images/design1.jpg',
+        '/images/design2.jpg',
+        '/images/design3.jpg',
+      ];
+    
+      return (
+        <main style={{ 
+            padding: '10px 20px'}}>
+          <Navbar />
+    
+          {/* Site Description */}
+          <section style={{ 
+              background: '#d9dfec',
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              gap: '20px',
+              padding: '20px',
+              textAlign: 'center', 
+            }}>
+            <h1>Maliha's Digital Art Portfolio</h1>
+            <p style={{ maxWidth: '70%', margin: '0 auto' }}>
+              Within this site, you will find a collection of some of my 
+              character art and other digitally made designs. For information on commissions, 
+              visit the commissions page for a price estimate and further contact information.
+            </p>
+          </section>
+    
+          {/* Previews Section */}
+          <section style={{
+              background: '#d9dfec',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              padding: '20px',
+              display: 'flex', 
+              flexDirection: 'column', 
+              gap: '40px' }}>
+            {/* Illustrations Preview */}
+            <div>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  gap: '20px',
+                  flexWrap: 'wrap',
+                  marginBottom: '30px',
+                }}
+              >
+                {illustrationsPreview.map((src, index) => (
+                  <Image
+                    key={index}
+                    src={src}
+                    alt={`Illustration Preview ${index + 1}`}
+                    width={150}
+                    height={150}
+                    style={{
+                      borderRadius: '8px',
+                      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                    }}
+                  />
+                ))}
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <Link href="./illustrations-page">
+                  <p
+                    style={{
+                        padding: '15px 30px',
+                        background: 'linear-gradient(90deg, #68758f, #98abd1)', // Gradient background
+                        color: '#fff',
+                        borderRadius: '25px',
+                        textDecoration: 'none',
+                        fontWeight: 'bold',
+                        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', // Subtle shadow
+                        transition: 'transform 0.2s, box-shadow 0.2s', // Smooth hover animation
+                        display: 'inline-block', // Ensure proper spacing
+                    }}
+                  >
+                    View Gallery
+                  </p>
+                </Link>
+              </div>
+            </div>
+          </section>
+        </main>
+      );
+    }

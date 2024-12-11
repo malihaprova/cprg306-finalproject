@@ -1,0 +1,18 @@
+/* components/Navbar.module.css */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 10px;
+    background-color: #d9dfec;
+  }
+  
+  .navLink {
+    text-decoration: none;
+    background: #d9dfec;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .navLink:hover {
+    background: #f2f2f2; /* Change this to any hover color you like */
+  }
+  
