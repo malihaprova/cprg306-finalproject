@@ -65,7 +65,7 @@ export default function Page() {
             padding: '10px',
           }}
         >
-          <Image src="/images/artist.png" alt="Artwork 1" width={300} height={40} />
+          <Image src="/images/artist.png" alt="Artist" width={463} height={720} />
         </div>
       </div>
     </main>
