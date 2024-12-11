@@ -35,7 +35,7 @@ export default function Home() {
               padding: '20px',
               textAlign: 'center', 
             }}>
-            <h1>Maliha's Digital Art Portfolio</h1>
+            <h1>Malihas Digital Art Portfolio</h1>
             <p style={{ maxWidth: '70%', margin: '0 auto' }}>
               Within this site, you will find a collection of some of my 
               character art and other digitally made designs. For information on commissions, 
